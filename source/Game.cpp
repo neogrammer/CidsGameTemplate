@@ -32,7 +32,7 @@ void Game::input()
 Game::~Game()
 {
 }
-
+//
 void* Game::run()
 {
 	sf::Clock frameTimer;
