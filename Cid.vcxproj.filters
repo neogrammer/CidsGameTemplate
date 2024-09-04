@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="headers">
+      <UniqueIdentifier>{3225dbb8-298e-487f-b928-9bd9500bc361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{abc61599-337c-4b07-b5f6-8d26815c8293}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\managers">
+      <UniqueIdentifier>{5bb7497b-4e10-49b3-8443-305c5b163f4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\entities">
+      <UniqueIdentifier>{d1e03888-39a0-4763-a0e1-ef0be881fe83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\game_states">
+      <UniqueIdentifier>{85d32316-0c03-4276-bc01-8c9e5beff5c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\animation">
+      <UniqueIdentifier>{7c4233f9-a09e-438f-84ea-90f513adcb20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\global">
+      <UniqueIdentifier>{e20504a4-93aa-4393-8953-a6d6d04bfa26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\managers">
+      <UniqueIdentifier>{458bdd60-16fe-450c-bcfa-578d2f946289}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\entities">
+      <UniqueIdentifier>{7bab88c8-ad86-43c6-af3f-249b269b7bc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\resources">
+      <UniqueIdentifier>{026ccad1-08e2-4540-8b49-e86e0dbcdaaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\resources">
+      <UniqueIdentifier>{af75015b-0bd3-4447-b39e-4a6adf78a779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\game_states">
+      <UniqueIdentifier>{b950226f-851d-4684-85f9-8a43d334df5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\animation">
+      <UniqueIdentifier>{c29f63dd-820a-49a5-ab3e-c95bbaf8b5cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\global">
+      <UniqueIdentifier>{a333b63c-168e-46b2-bc4e-acacb1633682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\io">
+      <UniqueIdentifier>{9e989c8d-2f14-43c9-8c6e-c7757ce12f4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\io">
+      <UniqueIdentifier>{a907f10b-36fc-4e5b-a7c8-e319005ddcb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\stages">
+      <UniqueIdentifier>{a6a6e5fa-a5db-4b70-9917-019e4d2938de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\stages">
+      <UniqueIdentifier>{1f4d2537-5b72-4600-8f81-d2935df05a74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\entities\player">
+      <UniqueIdentifier>{b5462a43-7a6a-47ac-af4b-faf29b0e7d7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\entities\enemies">
+      <UniqueIdentifier>{a606cacd-c86c-4454-8014-b98cd370c1c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\entities\npcs">
+      <UniqueIdentifier>{3d6ec453-4895-42e6-aa03-2c75d41cb74e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\entities\powerups">
+      <UniqueIdentifier>{d9e7a180-8f6b-4c54-af61-6666df0a5c2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\entities\projectiles">
+      <UniqueIdentifier>{76a9291a-a19f-4702-aae7-34806a2fd7a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\entities\platforms">
+      <UniqueIdentifier>{7d68720e-e959-454a-aa38-7776183db0de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\game_states\main_states">
+      <UniqueIdentifier>{839c2b66-6583-443e-9aa8-dc9743f56734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\game_states\helper_states">
+      <UniqueIdentifier>{1a7a0991-5796-40d6-ae91-39a7bbd04137}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\game_states\main_states">
+      <UniqueIdentifier>{f628bf04-091b-4162-aa62-eae575ce963f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\game_states\helper_states">
+      <UniqueIdentifier>{feccb86f-3466-4d86-af57-a6eeca8c2ad8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\entities\enemies">
+      <UniqueIdentifier>{649e0073-0331-47d8-a598-c31dd31d0f6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\entities\platforms">
+      <UniqueIdentifier>{17a1e7b6-5ccd-4b09-8653-9566f733f47e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\entities\projectiles">
+      <UniqueIdentifier>{37f079f8-8af6-421e-8cc6-d6937cb3d0e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\entities\powerups">
+      <UniqueIdentifier>{7add69f6-0f22-4a1a-acb8-dfddee02113e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\entities\npcs">
+      <UniqueIdentifier>{cd7f4814-a8d2-4aab-a165-eb0b7e18f149}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\entities\player">
+      <UniqueIdentifier>{d40235bb-53bb-4284-807e-6f056c21e0ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\resources\tpl">
+      <UniqueIdentifier>{ed672c23-17ed-4e34-9047-da1a1e5d85bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\io\tpl">
+      <UniqueIdentifier>{b3c11893-4184-46ad-a22c-4afdbf17adc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\zones">
+      <UniqueIdentifier>{f2793722-9042-49e5-9fda-3d4867f39434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\zones">
+      <UniqueIdentifier>{8a7b26d3-16f3-435e-a030-7e0238ecaa6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\zones\intro">
+      <UniqueIdentifier>{28abdddf-9c93-457b-a983-50ad8148ab89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\zones\intro">
+      <UniqueIdentifier>{1d420858-a06f-4ffa-8df7-7743eb2ce17c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\stages\main_stages">
+      <UniqueIdentifier>{056aefba-d43d-4843-878d-16e6d3814e20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\stages\main_stages\intro">
+      <UniqueIdentifier>{0d5c1c52-2e72-4117-ae35-43b3238ac25e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\stages\stage_helpers">
+      <UniqueIdentifier>{57fadcf2-d166-4105-82c3-388059b2906e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\stages\main_stages">
+      <UniqueIdentifier>{f38931df-60b5-495f-940e-022c77fdd80b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\stages\main_stages\intro">
+      <UniqueIdentifier>{634e7848-105b-40cf-a94f-24d44ddcfa23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\stages\stage_helpers">
+      <UniqueIdentifier>{7c410c52-8ff6-4a53-81eb-b373a023aebd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\ai">
+      <UniqueIdentifier>{d63d1573-48dd-42c3-be32-a1f7fe0ebf72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\ai">
+      <UniqueIdentifier>{d00e190d-64c7-4496-a119-54a8467d568a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\ai\entity_scripts">
+      <UniqueIdentifier>{b6dc019f-627d-43e4-8e41-b43e3daf49b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\ai\entity_scripts">
+      <UniqueIdentifier>{7dffcc95-f801-47db-bd43-730b59454e3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\ai\event_scripts">
+      <UniqueIdentifier>{eb7aac33-cae9-42a7-8f13-da764e2e1e29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\ai\event_scripts">
+      <UniqueIdentifier>{e1ee1e1e-006a-4138-87c2-da18e196bb7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\tile">
+      <UniqueIdentifier>{bb5421f3-c30f-4859-a392-6352f4b1ed18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\tile">
+      <UniqueIdentifier>{981a132b-f613-4d29-bb7f-6f5083934705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{3ce874f4-59ec-4531-8d0b-453732025c67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\textures">
+      <UniqueIdentifier>{f5293e9f-f863-4cd6-9271-54ba827cdb7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\data">
+      <UniqueIdentifier>{291b0b63-3b1a-4bae-9f34-62c80076cae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\sound">
+      <UniqueIdentifier>{63d1288b-d29d-48f6-aab1-b217e391a732}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\fonts">
+      <UniqueIdentifier>{6ceba973-eb8d-4335-ac36-0e99c49c6694}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Enemy.h">
+      <Filter>headers\entities\enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Entity.h">
+      <Filter>headers\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Player.h">
+      <Filter>headers\entities\player</Filter>
+    </ClInclude>
+    <ClInclude Include="include\NPC.h">
+      <Filter>headers\entities\npcs</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Powerup.h">
+      <Filter>headers\entities\powerups</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Projectile.h">
+      <Filter>headers\entities\projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Platform.h">
+      <Filter>headers\entities\platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EntityMgr.h">
+      <Filter>headers\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameStateMgr.h">
+      <Filter>headers\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StageMgr.h">
+      <Filter>headers\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IntroStage.h">
+      <Filter>headers\stages\main_stages\intro</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Stage.h">
+      <Filter>headers\stages</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Zone.h">
+      <Filter>headers\zones</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZoneTransition.h">
+      <Filter>headers\stages\stage_helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameLoadState.h">
+      <Filter>headers\game_states\main_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameMenuState.h">
+      <Filter>headers\game_states\main_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GamePassword_InputState.h">
+      <Filter>headers\game_states\main_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameSaveState.h">
+      <Filter>headers\game_states\main_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PlayState.h">
+      <Filter>headers\game_states\main_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StageSelectState.h">
+      <Filter>headers\game_states\main_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TitleState.h">
+      <Filter>headers\game_states\main_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BeatStageState.h">
+      <Filter>headers\game_states\helper_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DialogState.h">
+      <Filter>headers\game_states\helper_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameStartState.h">
+      <Filter>headers\game_states\helper_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameStateTransition.h">
+      <Filter>headers\game_states\helper_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PlayerDeathState.h">
+      <Filter>headers\game_states\helper_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PresentStageState.h">
+      <Filter>headers\game_states\helper_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SplashState.h">
+      <Filter>headers\game_states\main_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameState.h">
+      <Filter>headers\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FizziksMgr.h">
+      <Filter>headers\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InputMgr.h">
+      <Filter>headers\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ScriptMgr.h">
+      <Filter>headers\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Script.h">
+      <Filter>headers\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Accessor.h">
+      <Filter>headers\global</Filter>
+    </ClInclude>
+    <ClInclude Include="include\globals.h">
+      <Filter>headers\global</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ScriptSequence.h">
+      <Filter>headers\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EntityScript.h">
+      <Filter>headers\ai\entity_scripts</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EventScript.h">
+      <Filter>headers\ai\event_scripts</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Tileset.h">
+      <Filter>headers\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Tile.h">
+      <Filter>headers\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Tilemap.h">
+      <Filter>headers\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AnimMgr.h">
+      <Filter>headers\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Animation.h">
+      <Filter>headers\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AnimMap.h">
+      <Filter>headers\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Cfg.h">
+      <Filter>headers\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rec.h">
+      <Filter>headers\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Action.h">
+      <Filter>headers\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ActionMap.h">
+      <Filter>headers\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ActionTarget.h">
+      <Filter>headers\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Err.h">
+      <Filter>headers\global</Filter>
+    </ClInclude>
+    <ClInclude Include="include\offending_param_bundles.h">
+      <Filter>headers\global</Filter>
+    </ClInclude>
+    <ClInclude Include="include\object_types.h">
+      <Filter>headers\global</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ResourceManager.h">
+      <Filter>headers\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IntroZone.h">
+      <Filter>headers\zones\intro</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Entity.cpp">
+      <Filter>source\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Enemy.cpp">
+      <Filter>source\entities\enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Platform.cpp">
+      <Filter>source\entities\platforms</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Projectile.cpp">
+      <Filter>source\entities\projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Powerup.cpp">
+      <Filter>source\entities\powerups</Filter>
+    </ClCompile>
+    <ClCompile Include="source\NPC.cpp">
+      <Filter>source\entities\npcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\EntityMgr.cpp">
+      <Filter>source\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameStateMgr.cpp">
+      <Filter>source\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\StageMgr.cpp">
+      <Filter>source\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BeatStageState.cpp">
+      <Filter>source\game_states\helper_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DialogState.cpp">
+      <Filter>source\game_states\helper_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameStartState.cpp">
+      <Filter>source\game_states\helper_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameStateTransition.cpp">
+      <Filter>source\game_states\helper_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PlayerDeathState.cpp">
+      <Filter>source\game_states\helper_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PresentStageState.cpp">
+      <Filter>source\game_states\helper_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameLoadState.cpp">
+      <Filter>source\game_states\main_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameMenuState.cpp">
+      <Filter>source\game_states\main_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GamePassword_InputState.cpp">
+      <Filter>source\game_states\main_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameSaveState.cpp">
+      <Filter>source\game_states\main_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PlayState.cpp">
+      <Filter>source\game_states\main_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SplashState.cpp">
+      <Filter>source\game_states\main_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\StageSelectState.cpp">
+      <Filter>source\game_states\main_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameState.cpp">
+      <Filter>source\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Zone.cpp">
+      <Filter>source\zones</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ZoneTransition.cpp">
+      <Filter>source\stages\stage_helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\IntroStage.cpp">
+      <Filter>source\stages\main_stages\intro</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Stage.cpp">
+      <Filter>source\stages</Filter>
+    </ClCompile>
+    <ClCompile Include="source\TitleState.cpp">
+      <Filter>source\game_states\main_states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Player.cpp">
+      <Filter>source\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\FizzicksMgr.cpp">
+      <Filter>source\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\InputMgr.cpp">
+      <Filter>source\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ScriptMgr.cpp">
+      <Filter>source\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Script.cpp">
+      <Filter>source\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Accessor.cpp">
+      <Filter>source\global</Filter>
+    </ClCompile>
+    <ClCompile Include="source\globals.cpp">
+      <Filter>source\global</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ScriptSequence.cpp">
+      <Filter>source\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\EntityScript.cpp">
+      <Filter>source\ai\entity_scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\EventScript.cpp">
+      <Filter>source\ai\event_scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Tile.cpp">
+      <Filter>source\tile</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Tilemap.cpp">
+      <Filter>source\tile</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Tileset.cpp">
+      <Filter>source\tile</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AnimMgr.cpp">
+      <Filter>source\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Animation.cpp">
+      <Filter>source\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AnimMap.cpp">
+      <Filter>source\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Cfg.cpp">
+      <Filter>source\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rec.cpp">
+      <Filter>source\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Action.cpp">
+      <Filter>source\io</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Game.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\Err.cpp">
+      <Filter>source\global</Filter>
+    </ClCompile>
+    <ClCompile Include="source\IntroZone.cpp">
+      <Filter>source\zones\intro</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\tpl\ResourceManager.tpl">
+      <Filter>headers\resources\tpl</Filter>
+    </None>
+    <None Include="include\tpl\ActionMap.tpl">
+      <Filter>headers\io\tpl</Filter>
+    </None>
+    <None Include="include\tpl\ActionTarget.tpl">
+      <Filter>headers\io\tpl</Filter>
+    </None>
+  </ItemGroup>
+</Project>

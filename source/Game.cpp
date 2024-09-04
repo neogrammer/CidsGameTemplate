@@ -1,0 +1,86 @@
+
+#include <Game.h>
+#include <type_traits>
+#include <string>
+#include <variant>
+#include <string>
+#include <functional>
+#include <utility>
+#include <globals.h>
+#include <SFML/Window/Event.hpp>
+
+Game::Game()
+{
+	/*MenuObject::setupPatches();
+
+	wndw::CreateWindow("MegamanOne", 1600U, 900U);
+	
+	gWnd.setPosition({ 120, 20 });
+	gStateMgr->setGame(this);*/
+}
+
+void Game::render()
+{
+	//gStateMgr->render();
+}
+
+void Game::input()
+{
+	//gStateMgr->input();
+}
+
+Game::~Game()
+{
+}
+
+void* Game::run()
+{
+	sf::Clock frameTimer;
+	::gTime = frameTimer.restart().asSeconds();
+	
+	while (::gWnd.isOpen())
+	{
+
+		// window events handled here
+		sf::Event e;
+		while (::gWnd.pollEvent(e))
+		{
+			if ((e.type == sf::Event::KeyReleased && e.key.code == sf::Keyboard::Escape) || e.type == sf::Event::Closed)
+			{
+				::gWnd.close();
+			}
+			
+		}
+
+		// if not closed, update and draw the game as needed
+		if (::gWnd.isOpen())
+		{
+			::gTime = frameTimer.restart().asSeconds();	
+			
+			input();
+
+			
+			update();
+
+			
+			// now render the screen
+			::gWnd.clear(sf::Color(0, 0, 0, 255));
+			render();
+			::gWnd.display();
+
+			
+		}
+	}
+	return nullptr;
+}
+
+void Game::update()
+{
+	//gStateMgr->update();
+}
+
+void Game::updateLate()
+{
+	//gStateMgr->updateLate();
+}
+
