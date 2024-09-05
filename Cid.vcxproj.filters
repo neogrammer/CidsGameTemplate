@@ -554,5 +554,8 @@
     <Image Include="assets\textures\tilesets\tileset1_50x50.png">
       <Filter>assets\textures\tilesets</Filter>
     </Image>
+    <Image Include="assets\textures\bgs\spaceBG.png">
+      <Filter>assets\textures\bgs</Filter>
+    </Image>
   </ItemGroup>
 </Project>

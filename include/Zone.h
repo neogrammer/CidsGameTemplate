@@ -43,4 +43,5 @@ public:
 	void render();
 	std::array<Portal, 4>& getPortals();
 	std::vector<std::weak_ptr<Tile> >& getTiles();
+
 };

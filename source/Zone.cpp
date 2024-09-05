@@ -43,11 +43,11 @@ void Zone::setup(int zoneNum, std::pair<sf::Vector2i, sf::Vector2i> tileCorners,
 	//portals[(int)ZoneFace::West].otherSide.reset();
 	//portals[(int)ZoneFace::West].otherSide = west_;
 
-	bgSpr = {};
-	bgSpr.setTexture(tex);
-	if (iRect_ != sf::IntRect{ {0, 0}, { 0,0 } })
-		bgSpr.setTextureRect({ { tileCorners.first.x * iRect_.getSize().x , tileCorners.first.y * iRect_.getSize().y }, { (tileCorners.second.x - tileCorners.first.x) * iRect_.getSize().x , (tileCorners.second.y - tileCorners.first.y) * iRect_.getSize().y } });
-	bgSpr.setPosition({ 0.f,0.f });
+	//bgspr = {};
+	//bgspr.setposition({ 0.f,0.f });
+	//bgspr.settexture(tex);
+	//	bgspr.settexturerect({ { tilecorners.first.x * irect_.getsize().x , tilecorners.first.y * irect_.getsize().y }, { (tilecorners.second.x - tilecorners.first.x) * irect_.getsize().x , (tilecorners.second.y - tilecorners.first.y) * irect_.getsize().y } });
+	//if (iRect_ != sf::IntRect{ {0, 0}, { 0,0 } })
 
 	topLeftTile = tileCorners.first;
 	bottomRightTile = tileCorners.second;
@@ -76,7 +76,6 @@ void Zone::setup(int zoneNum, std::pair<sf::Vector2i, sf::Vector2i> tileCorners,
 			tiles[(static_cast<std::vector<std::weak_ptr<Tile>, std::allocator<std::weak_ptr<Tile>>>::size_type>(y) - topLeftTile.y) * colsInner + (x - topLeftTile.x)] = t;
 		}
 	}
-	int i = 0;
 }
 
 
@@ -94,6 +93,12 @@ void Zone::render()
 		return;
 
 	gWnd.draw(bgSpr);
+	for (auto& t : tiles)
+	{
+		sf::Sprite tmp = {};
+		tmp.setTexture(Cfg::textures.get((int)gAcc.stageMgr->getStage("IntroStage")->getTSetTex()));
+		gWnd.draw(tmp);
+	}
 }
 
 std::array<Portal, 4>& Zone::getPortals()

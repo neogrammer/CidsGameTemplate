@@ -25,5 +25,22 @@ void IntroStage::update()
 
 void IntroStage::render()
 {
-	gWnd.clear(sf::Color(47, 147, 247, 255));
+	gWnd.draw(getZone()->bgSpr);
+
+	for (auto& tile : getZone()->getTiles())
+	{
+		auto tmp = tile.lock();
+		auto pos = tmp->aabb.pos;
+		pos.x -= tmp->aabb.texOffset.x;
+		pos.y -= tmp->aabb.texOffset.y;
+		sf::Sprite tmpSpr = {};
+		tmpSpr.setTexture(Cfg::textures.get((int)getTSetTex()));
+		tmpSpr.setPosition({pos.x, pos.y});
+		tmpSpr.setTextureRect({ { tmp->aabb.texPos }, {tmp->aabb.texRectDims} });
+		gWnd.draw(tmpSpr);
+	}
+
+		
+
+
 }

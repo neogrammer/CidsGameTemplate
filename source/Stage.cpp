@@ -30,8 +30,10 @@ Stage::Stage(const std::string& tmapData_, const std::string& zoneData_, const s
 
 	for (int i = 0; i < numZones; i++)
 	{
-		
-			bool topRow = false;
+		zones[i]->bgSpr = {};
+		zones[i]->bgSpr.setTexture(Cfg::textures.get((int)Cfg::Textures::SpaceBG));
+		// set texture rect of big background here	
+		bool topRow = false;
 			bool bottomRow = false;
 			bool rightCol = false;
 
@@ -129,6 +131,19 @@ Stage::Stage(const std::string& tmapData_, const std::string& zoneData_, const s
 
 Stage::~Stage()
 {
+}
+Cfg::Textures Stage::getTSetTex()
+{
+	return tmap->getTextureType();
+}
+std::shared_ptr<Zone> Stage::getZone()
+{
+	return zones.at(currZoneIdx);
+}
+
+std::shared_ptr<Zone> Stage::getZone(int idx)
+{
+	return zones.at(idx);
 }
 //
 //void Stage::setZone(int zoneNum_, std::pair<sf::Vector2i, sf::Vector2i> tileCorners_, std::vector<std::shared_ptr<Tile>>& tiles_, int cols_, sf::Texture& tex_, sf::IntRect iRect_, std::shared_ptr<Zone> north_, std::shared_ptr<Zone> south_, std::shared_ptr<Zone> east_, std::shared_ptr<Zone> west_)

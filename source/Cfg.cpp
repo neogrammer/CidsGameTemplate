@@ -12,7 +12,9 @@ ActionMap<int> Cfg::playerInputs = {};
 std::unordered_map<std::string, Cfg::Textures> Cfg::stringToTex = {
 	{"tset1", Textures::TSet1},
 	{"titleBG",Textures::TitleBG},
-	{"splashBG",Textures::SplashBG}
+	{"splashBG",Textures::SplashBG},
+	{"spaceBG",Textures::SpaceBG}
+
 };
 
 void Cfg::Initialize()
@@ -44,6 +46,8 @@ void Cfg::initTextures()
 {
 	textures.load((int)Cfg::Textures::SplashBG, "assets/textures/bgs/splashBG.jpg");
 	textures.load((int)Cfg::Textures::TitleBG, "assets/textures/bgs/title.jpg");
+	textures.load((int)Cfg::Textures::SpaceBG, "assets/textures/bgs/spaceBG.png");
+
 	textures.load((int)Cfg::Textures::TSet1, "assets/textures/tilesets/tileset1_50x50.png");
 
 }

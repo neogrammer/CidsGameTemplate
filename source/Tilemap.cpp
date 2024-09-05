@@ -64,6 +64,11 @@ void Tilemap::setupTiles(const std::string& filename_, const std::string& tsetDa
 	}
 }
 
+Cfg::Textures Tilemap::getTextureType()
+{
+	return tileset.getTexType();
+}
+
 
 std::pair<sf::Vector2i, sf::Vector2i>& Tilemap::getZoneRange(int zoneNum_)
 {

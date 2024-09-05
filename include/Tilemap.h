@@ -29,5 +29,5 @@ public:
 	Cfg::Textures texType();
 	std::vector<std::shared_ptr<Tile> >& getTiles();
 	void setupTiles(const std::string& filename_, const std::string& tsetData_);
-
+	Cfg::Textures getTextureType();
 };
