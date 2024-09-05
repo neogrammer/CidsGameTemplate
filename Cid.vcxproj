@@ -135,6 +135,7 @@
   <ItemGroup>
     <None Include="assets\data\tilemaps\tilemap_introStage.dat" />
     <None Include="assets\data\tilesets\tileset1.dat" />
+    <None Include="assets\data\zones\introStageZoneData.dat" />
     <None Include="include\tpl\ActionMap.tpl" />
     <None Include="include\tpl\ActionTarget.tpl" />
     <None Include="include\tpl\ResourceManager.tpl" />
@@ -232,7 +233,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

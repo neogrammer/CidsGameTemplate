@@ -28,6 +28,6 @@ public:
 	void setZone(int zoneNum_, std::shared_ptr<Zone> zone_);
 	Cfg::Textures texType();
 	std::vector<std::shared_ptr<Tile> >& getTiles();
-	void setupTiles(const std::string& filename_);
+	void setupTiles(const std::string& filename_, const std::string& tsetData_);
 
 };

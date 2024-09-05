@@ -3,8 +3,12 @@
 #include <AABB.h>
 struct Tile
 {
+	bool solid{ false };
 	AABB aabb{};
 public:
+	bool isSolid();
+	void setSolid(bool c_);
+
 	Tile() = default;
 	Tile(const AABB& aabb_);
 	~Tile() = default;

@@ -45,6 +45,8 @@ void cid::GameStateMgr::setup()
 
 	stateStack.push_back(states[GameStateType::Splash]);
 
+
+
 }
 
 void cid::GameStateMgr::render()

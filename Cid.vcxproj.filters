@@ -190,6 +190,9 @@
     <Filter Include="source\portals">
       <UniqueIdentifier>{a48ea00b-ba5e-42c6-aede-77ae2be093c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets\data\zones">
+      <UniqueIdentifier>{90e19790-0311-476d-b06e-ae56a7882734}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Enemy.h">
@@ -536,6 +539,9 @@
     </None>
     <None Include="assets\data\tilesets\tileset1.dat">
       <Filter>assets\data\tilesets</Filter>
+    </None>
+    <None Include="assets\data\zones\introStageZoneData.dat">
+      <Filter>assets\data\zones</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

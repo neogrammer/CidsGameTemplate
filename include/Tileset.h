@@ -9,6 +9,7 @@
 
 class Tileset
 {
+	bool solid{ false };
 	int cols{  };
 	int rows{  };
 	Cfg::Textures texType;
@@ -23,6 +24,7 @@ public:
 	Tileset& operator=(const Tileset&) = delete;
 	Tile copyTile(int tileIdx_);
 	Cfg::Textures getTexType();
+	void setup(const std::string& tsetData_);
 
 
 

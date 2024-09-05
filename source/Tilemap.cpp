@@ -27,8 +27,10 @@ std::vector<std::shared_ptr<Tile>>& Tilemap::getTiles()
 	return tiles;
 }
 
-void Tilemap::setupTiles(const std::string& filename_)
+void Tilemap::setupTiles(const std::string& filename_, const std::string& tsetData_)
 {
+	tileset.setup(tsetData_);
+
 	std::ifstream file;
 	file.open(filename_);
 
@@ -41,7 +43,7 @@ void Tilemap::setupTiles(const std::string& filename_)
 		tiles.clear();
 
 		int colsPerScreen, rowsPerScreen, totalRows, totalCols;
-		file >> colsPerScreen >> rowsPerScreen >> totalRows >> totalCols;
+		file >> colsPerScreen >> rowsPerScreen >> totalCols >> totalRows;
 		tiles.reserve(totalCols * totalRows);
 		for (int y = 0; y < totalRows; y++)
 		{

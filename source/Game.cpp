@@ -18,7 +18,7 @@ Game::Game()
 	gAcc.fizzicksMgr->setup();
 	gAcc.inputMgr->setup();
 	gAcc.scriptMgr->setup();
-	gAcc.stageMgr->setup("","");
+	gAcc.stageMgr->setup("IntroStage", "assets/data/tilemaps/tilemap_introStage.dat", "assets/data/zones/introStageZoneData.dat", "asssets/data/tilesets/tileset1.dat");
 
 	/*MenuObject::setupPatches();
 

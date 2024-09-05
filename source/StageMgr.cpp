@@ -2,13 +2,14 @@
 #include <IntroStage.h>
 using namespace cid;
 
-void cid::StageMgr::setup(const std::string& tmapData_, const std::string& zoneData_)
+void cid::StageMgr::setup(const std::string& stageName_, const std::string& tmapData_, const std::string& zoneData_, const std::string& tsetData_)
 {
 	stages.clear();
-	stages.reserve(1);
-	stages.emplace(std::pair{ "IntroStage", std::make_shared<IntroStage>(tmapData_, zoneData_) });
+	stages.reserve(stages.size() + 1);
+	stages.emplace(std::pair{ stageName_, std::make_shared<IntroStage>(tmapData_, zoneData_, tsetData_)});
 
-	currStage = stages["IntroStage"];
+	if (currStage == nullptr)
+		currStage = stages[stageName_];
 }
 
 void cid::StageMgr::input()

@@ -12,7 +12,7 @@ namespace cid
 		std::shared_ptr<Stage> currStage{};
 	public:
 
-		void setup(const std::string& tmapData_, const std::string& zoneData_);
+		void setup(const std::string& stageName_, const std::string & tmapData_, const std::string& zoneData_, const std::string& tsetData_);
 		void input();
 		void update();
 		void render();

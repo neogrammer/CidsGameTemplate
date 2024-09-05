@@ -2,8 +2,8 @@
 #include <string>
 #include <globals.h>
 
-IntroStage::IntroStage(const std::string& tmapData_, const std::string& zoneData_)
-	: Stage{ tmapData_, zoneData_ }
+IntroStage::IntroStage(const std::string& tmapData_, const std::string& zoneData_, const std::string& tsetData_)
+	: Stage{ tmapData_, zoneData_, tsetData_ }
 {
 }
 
