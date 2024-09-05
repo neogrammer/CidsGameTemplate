@@ -7,7 +7,8 @@ Zone::~Zone()
 {
 }
 
-void Zone::setup(int zoneNum, std::pair<sf::Vector2i, sf::Vector2i> tileCorners, std::vector<std::shared_ptr<Tile> >& tiles_, int cols_, sf::Texture& tex, sf::IntRect iRect_, std::shared_ptr<Zone> north_, std::shared_ptr<Zone> south_, std::shared_ptr<Zone> east_, std::shared_ptr<Zone> west_)
+void Zone::setup(int zoneNum, std::pair<sf::Vector2i, sf::Vector2i> tileCorners, std::vector<std::shared_ptr<Tile> >& tiles_, int cols_, 
+	sf::Texture& tex, sf::IntRect iRect_, std::shared_ptr<Zone> north_, std::shared_ptr<Zone> south_, std::shared_ptr<Zone> east_, std::shared_ptr<Zone> west_)
 {
 	zoneID = zoneNum;
 	//if (portals[(int)ZoneFace::North].otherSide.lock() == nullptr)
@@ -76,15 +77,31 @@ void Zone::setup(int zoneNum, std::pair<sf::Vector2i, sf::Vector2i> tileCorners,
 			tiles[(static_cast<std::vector<std::weak_ptr<Tile>, std::allocator<std::weak_ptr<Tile>>>::size_type>(y) - topLeftTile.y) * colsInner + (x - topLeftTile.x)] = t;
 		}
 	}
+
+	bgSpr.setTexture(Cfg::textures.get((int)Cfg::Textures::SpaceBG));
+	bgSpr2.setTexture(Cfg::textures.get((int)Cfg::Textures::SpaceBG));
+	bgSpr2.setPosition({ 0.f - (float)bgSpr2.getTextureRect().width, 0.f });
+
+
 }
 
 
 void Zone::input()
 {
+
 }
 
 void Zone::update()
 {
+	bgSpr.move({ 5.f * gTime,0.f });
+	bgSpr2.move({ 5.f * gTime,0.f });
+
+	if (bgSpr2.getPosition().x > 0.f)
+	{
+		bgSpr2.setPosition({ bgSpr2.getPosition().x - bgSpr2.getTextureRect().width, bgSpr2.getPosition().y });
+		bgSpr.setPosition({ bgSpr2.getPosition().x + bgSpr2.getTextureRect().width, bgSpr2.getPosition().y });
+
+	}
 }
 
 void Zone::render()
@@ -93,11 +110,13 @@ void Zone::render()
 		return;
 
 	gWnd.draw(bgSpr);
+	gWnd.draw(bgSpr2);
+	
 	for (auto& t : tiles)
 	{
 		sf::Sprite tmp = {};
 		tmp.setTexture(Cfg::textures.get((int)gAcc.stageMgr->getStage("IntroStage")->getTSetTex()));
-		gWnd.draw(tmp);
+		//gWnd.draw(tmp);
 	}
 }
 

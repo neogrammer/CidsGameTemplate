@@ -4,6 +4,8 @@
 class IntroStage : public Stage
 {
 public:
+	int zoneAdj{ 0 };
+public:
 	IntroStage() = delete;
 	IntroStage(const std::string& tmapData_, const std::string& zoneData_, const std::string& tsetData_);
 	~IntroStage() override final;

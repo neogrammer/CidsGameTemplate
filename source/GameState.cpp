@@ -3,3 +3,8 @@
 GameState::~GameState()
 {
 }
+
+GameStateType GameState::getType()
+{
+	return type;
+}

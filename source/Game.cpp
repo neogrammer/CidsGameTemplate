@@ -86,6 +86,7 @@ void* Game::run()
 
 void Game::update()
 {
+
 	gAcc.gameStateMgr->update();
 }
 

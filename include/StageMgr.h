@@ -10,6 +10,7 @@ namespace cid
 	{
 		std::unordered_map<std::string, std::shared_ptr<Stage> > stages{};
 		std::shared_ptr<Stage> currStage{};
+
 	public:
 
 		void setup(const std::string& stageName_, const std::string & tmapData_, const std::string& zoneData_, const std::string& tsetData_);
@@ -17,6 +18,8 @@ namespace cid
 		void update();
 		void render();
 		std::shared_ptr<Stage> getStage(const std::string& stageName_);
+		void setCurrStage(std::shared_ptr<Stage> newStage_);
+		void setZone(int zoneNum_);
 
 	};
 

@@ -27,4 +27,6 @@ struct Accessor
 		cid::ScriptMgr& scriptMgr_,
 		cid::StageMgr& stageMgr_);
 
+
+
 };

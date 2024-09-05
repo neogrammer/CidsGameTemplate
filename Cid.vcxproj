@@ -45,7 +45,6 @@
     <ClInclude Include="include\GameStartState.h" />
     <ClInclude Include="include\GameState.h" />
     <ClInclude Include="include\GameStateMgr.h" />
-    <ClInclude Include="include\GameStateTransition.h" />
     <ClInclude Include="include\game_state_types.h" />
     <ClInclude Include="include\globals.h" />
     <ClInclude Include="include\InputMgr.h" />
@@ -104,7 +103,6 @@
     <ClCompile Include="source\GameStartState.cpp" />
     <ClCompile Include="source\GameState.cpp" />
     <ClCompile Include="source\GameStateMgr.cpp" />
-    <ClCompile Include="source\GameStateTransition.cpp" />
     <ClCompile Include="source\globals.cpp" />
     <ClCompile Include="source\InputMgr.cpp" />
     <ClCompile Include="source\IntroStage.cpp" />

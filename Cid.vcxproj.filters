@@ -154,9 +154,6 @@
     <Filter Include="headers\tile">
       <UniqueIdentifier>{bb5421f3-c30f-4859-a392-6352f4b1ed18}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\tile">
-      <UniqueIdentifier>{981a132b-f613-4d29-bb7f-6f5083934705}</UniqueIdentifier>
-    </Filter>
     <Filter Include="assets">
       <UniqueIdentifier>{3ce874f4-59ec-4531-8d0b-453732025c67}</UniqueIdentifier>
     </Filter>
@@ -192,6 +189,9 @@
     </Filter>
     <Filter Include="assets\data\zones">
       <UniqueIdentifier>{90e19790-0311-476d-b06e-ae56a7882734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\resources\tile">
+      <UniqueIdentifier>{981a132b-f613-4d29-bb7f-6f5083934705}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -265,9 +265,6 @@
       <Filter>headers\game_states\helper_states</Filter>
     </ClInclude>
     <ClInclude Include="include\GameStartState.h">
-      <Filter>headers\game_states\helper_states</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GameStateTransition.h">
       <Filter>headers\game_states\helper_states</Filter>
     </ClInclude>
     <ClInclude Include="include\PlayerDeathState.h">
@@ -404,9 +401,6 @@
     <ClCompile Include="source\GameStartState.cpp">
       <Filter>source\game_states\helper_states</Filter>
     </ClCompile>
-    <ClCompile Include="source\GameStateTransition.cpp">
-      <Filter>source\game_states\helper_states</Filter>
-    </ClCompile>
     <ClCompile Include="source\PlayerDeathState.cpp">
       <Filter>source\game_states\helper_states</Filter>
     </ClCompile>
@@ -483,13 +477,13 @@
       <Filter>source\ai\event_scripts</Filter>
     </ClCompile>
     <ClCompile Include="source\Tile.cpp">
-      <Filter>source\tile</Filter>
+      <Filter>source\resources\tile</Filter>
     </ClCompile>
     <ClCompile Include="source\Tilemap.cpp">
-      <Filter>source\tile</Filter>
+      <Filter>source\resources\tile</Filter>
     </ClCompile>
     <ClCompile Include="source\Tileset.cpp">
-      <Filter>source\tile</Filter>
+      <Filter>source\resources\tile</Filter>
     </ClCompile>
     <ClCompile Include="source\AnimMgr.cpp">
       <Filter>source\managers</Filter>

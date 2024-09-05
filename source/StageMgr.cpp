@@ -31,3 +31,16 @@ std::shared_ptr<Stage> StageMgr::getStage(const std::string& stageName_)
 {
 	return stages.at(stageName_);
 }
+
+void cid::StageMgr::setCurrStage(std::shared_ptr<Stage> newStage_)
+{
+	currStage = newStage_;
+}
+
+void cid::StageMgr::setZone(int zoneNum_)
+{
+
+	
+	currStage->setCurrZone(zoneNum_);
+
+}

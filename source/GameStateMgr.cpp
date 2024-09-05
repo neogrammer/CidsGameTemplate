@@ -8,12 +8,17 @@
 #include <GameLoadState.h>
 #include <GameSaveState.h>
 #include <GameMenuState.h>
+#include <IntroStage.h>
+#include <ZoneTransition.h>
+
+
 #include <GamePassword_InputState.h>
 #include <PlayState.h>
 #include <SplashState.h>
 #include <StageSelectState.h>
 #include <TitleState.h>
 #include <globals.h>
+#include <iostream>
 using namespace cid;
 
 
@@ -31,7 +36,30 @@ void cid::GameStateMgr::setupState(GameStateType type_, const std::string& stage
 	if (type_ == GameStateType::Play)
 	{
 		dynamic_cast<PlayState*>(states.at(type_).get())->currStage = gAcc.stageMgr->getStage(stageName_);
+		currStage = dynamic_cast<PlayState*>(states.at(type_).get())->currStage.lock();
+		//dynamic_cast<PlayState*>(std::dynamic_pointer_cast<std::shared_ptr<PlayState>>(states.at(type_)).get()->get())->currStage.lock();
 	}
+	if (type_ == GameStateType::StateTransition)
+	{
+		if (dynamic_cast<ZoneTransition*>(states.at(type_).get()) == nullptr)
+		{
+			std::cout << "No ZoneTransition pushed onto the stack when there should be" << std::endl;
+				return;
+		}
+		dynamic_cast<ZoneTransition*>(states.at(type_).get())->setupAndStart(zoneBeforeChange, zoneBeforeChange+ (dynamic_cast<IntroStage*>(gAcc.stageMgr->getStage("IntroStage").get())->zoneAdj), currStage->getZone(zoneBeforeChange), currStage->getZone(zoneBeforeChange + dynamic_cast<IntroStage*>(gAcc.stageMgr->getStage("IntroStage").get())->zoneAdj));
+	
+		// transition state type returning the zone transitioning into
+	}
+}
+
+GameStateType cid::GameStateMgr::getCurrentStateType()
+{
+	return gAcc.gameStateMgr->getTop().lock()->getType();
+}
+
+std::weak_ptr<GameState>& cid::GameStateMgr::getTop()
+{
+	return stateStack.back();
 }
 
 void cid::GameStateMgr::setup()
@@ -40,7 +68,7 @@ void cid::GameStateMgr::setup()
 	states.emplace(std::pair{ GameStateType::BeatStage , std::make_shared<BeatStageState>() });
 	states.emplace(std::pair{ GameStateType::Dialog , std::make_shared<DialogState>() });
 	states.emplace(std::pair{ GameStateType::GameStart , std::make_shared<GameStartState>() });
-	states.emplace(std::pair{ GameStateType::StateTransition , std::make_shared<GameStateTransition>() });
+	states.emplace(std::pair{ GameStateType::StateTransition , std::make_shared<ZoneTransition>() });
 	states.emplace(std::pair{ GameStateType::PlayerDeath , std::make_shared<PlayerDeathState>() });
 	states.emplace(std::pair{ GameStateType::Load  , std::make_shared<GameLoadState>() });
 	states.emplace(std::pair{ GameStateType::Save, std::make_shared<GameSaveState>() });
