@@ -11,4 +11,6 @@ public:
 	void input() override final;
 	void update() override final;
 	void render() override final;
+	std::weak_ptr<Stage> currStage{};
+
 };

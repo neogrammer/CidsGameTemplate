@@ -13,6 +13,7 @@
 #include <SplashState.h>
 #include <StageSelectState.h>
 #include <TitleState.h>
+#include <globals.h>
 using namespace cid;
 
 
@@ -25,6 +26,14 @@ cid::GameStateMgr::~GameStateMgr()
 {
 }
 
+void cid::GameStateMgr::setupState(GameStateType type_, const std::string& stageName_)
+{
+	if (type_ == GameStateType::Play)
+	{
+		dynamic_cast<PlayState*>(states.at(type_).get())->currStage = gAcc.stageMgr->getStage(stageName_);
+	}
+}
+
 void cid::GameStateMgr::setup()
 {
 	states.emplace(std::pair{ GameStateType::Splash, std::make_shared<SplashState>() });
@@ -33,12 +42,12 @@ void cid::GameStateMgr::setup()
 	states.emplace(std::pair{ GameStateType::GameStart , std::make_shared<GameStartState>() });
 	states.emplace(std::pair{ GameStateType::StateTransition , std::make_shared<GameStateTransition>() });
 	states.emplace(std::pair{ GameStateType::PlayerDeath , std::make_shared<PlayerDeathState>() });
-	states.emplace(std::pair{ GameStateType::Load , std::make_shared<PresentStageState>() });
-	states.emplace(std::pair{ GameStateType::Save , std::make_shared<GameLoadState>() });
-	states.emplace(std::pair{ GameStateType::Menu , std::make_shared<GameSaveState>() });
-	states.emplace(std::pair{ GameStateType::Password , std::make_shared<GameMenuState>() });
-	states.emplace(std::pair{ GameStateType::Play , std::make_shared<GamePassword_InputState>() });
-	states.emplace(std::pair{ GameStateType::StageSelect , std::make_shared<PlayState>() });
+	states.emplace(std::pair{ GameStateType::Load  , std::make_shared<GameLoadState>() });
+	states.emplace(std::pair{ GameStateType::Save, std::make_shared<GameSaveState>() });
+	states.emplace(std::pair{ GameStateType::Menu 	, std::make_shared<GameMenuState>() });
+	states.emplace(std::pair{ GameStateType::Password, std::make_shared<GamePassword_InputState>() });
+	states.emplace(std::pair{ GameStateType::Play , std::make_shared<PlayState>() });
+	states.emplace(std::pair{ GameStateType::PresentStage,  std::make_shared<PresentStageState>() });
 	states.emplace(std::pair{ GameStateType::Title , std::make_shared<TitleState>() });
 	states.emplace(std::pair{ GameStateType::StageSelect, std::make_shared<StageSelectState>() });
 

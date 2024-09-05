@@ -19,12 +19,9 @@ Stage::Stage(const std::string& tmapData_, const std::string& zoneData_, const s
 	{
 		std::shared_ptr<Zone> aZone = std::make_shared<Zone>();
 		zones.push_back(aZone);
-		auto col = count % 32; auto row = count / 32;
-		zones.back()->setup(count, { {count * 32, row * 18}, {col * 32 + zoneW, row * 18 + zoneH} }, tmap->getTiles(), zoneW, Cfg::textures.get((int)tmap->texType()), { {count * 32, row * 18}, {col * 32 + zoneW, row * 18 + zoneH} }, nullptr,nullptr,nullptr,nullptr);
-		zones.back()->portals[int(ZoneFace::North)] = Portal{};
-		zones.back()->portals[int(ZoneFace::South)] = Portal{};
-		zones.back()->portals[int(ZoneFace::East)] = Portal{};
-		zones.back()->portals[int(ZoneFace::West)] = Portal{};
+		auto col = count % 3; 
+		auto row = count / 3;
+		zones.back()->setup(count, { {(count % 3) * zoneW, (count / 3) * zoneH}, {(count % 3) * zoneW + zoneW ,  (count / 3) * zoneH + zoneH } }, tmap->getTiles(), zoneW * 3, Cfg::textures.get((int)tmap->texType()), { {0,0},{50,50} }, nullptr, nullptr, nullptr, nullptr);
 
 		count++;
 	}
@@ -33,26 +30,25 @@ Stage::Stage(const std::string& tmapData_, const std::string& zoneData_, const s
 
 	for (int i = 0; i < numZones; i++)
 	{
-		for (int j = 0; j < zones[i]->portals.size(); j++)
-		{
+		
 			bool topRow = false;
 			bool bottomRow = false;
 			bool rightCol = false;
 
 			bool leftCol = false;
-			if (i < zoneW)
+			if (i < 3)
 			{
 				topRow = true;
 			}
-			if (i >= numZones - zoneW)
+			if (i >= numZones - 3)
 			{
 				bottomRow = true;
 			}
-			if (j % zoneW == 0)
+			if (i % 3 == 0)
 			{
 				leftCol = true;
 			}
-			if ((j % zoneW) == (zoneW - 1))
+			if ((i % 3) == (3 - 1))
 			{
 				rightCol = true;
 			}
@@ -60,67 +56,74 @@ Stage::Stage(const std::string& tmapData_, const std::string& zoneData_, const s
 			if (!leftCol && !rightCol && !topRow && !bottomRow)
 			{
 				
-				zones[i]->portals.at((int)ZoneFace::North).set(zones[i - zoneW]);
-				zones[i]->portals.at((int)ZoneFace::South).set(zones[i + zoneW]);
-				zones[i]->portals.at((int)ZoneFace::East).set(zones[i + 1]);
-				zones[i]->portals.at((int)ZoneFace::West).set(zones[i-1]);
+				zones[i]->getPortals()[(int)ZoneFace::North].set(zones[(i % 3) + 3 * (i / 3) - 3]);
+				zones[i]->getPortals()[(int)ZoneFace::South].set(zones[(i % 3) + 3 * (i / 3) + 3]);
+				zones[i]->getPortals()[(int)ZoneFace::East].set(zones[(i % 3) + 3 * (i / 3) + 1]);
+				zones[i]->getPortals()[(int)ZoneFace::West].set(zones[(i % 3) + 3 * (i / 3) - 1]);
+
 			}
 			else
 			{
 				if (leftCol && topRow)
 				{
-				
-					zones[i]->portals.at((int)ZoneFace::South).set(zones[i + zoneW]);
-					zones[i]->portals.at((int)ZoneFace::East).set(zones[i + 1]);
+
+					zones[i]->getPortals()[(int)ZoneFace::South].set(zones[(i % 3) + 3 * (i / 3) + 3]);
+					zones[i]->getPortals()[(int)ZoneFace::East].set(zones[(i % 3) + 3 * (i / 3) + 1]);
 					
 				}
 				else if (leftCol && bottomRow)
 				{
-					zones[i]->portals.at((int)ZoneFace::North).set(zones[i - zoneW]);
-					zones[i]->portals.at((int)ZoneFace::East).set(zones[i + 1]);
+					zones[i]->getPortals()[(int)ZoneFace::North].set(zones[(i % 3) + 3 * (i / 3) - 3]);
+
+					zones[i]->getPortals()[(int)ZoneFace::East].set(zones[(i % 3) + 3 * (i / 3) + 1]);
 					
 				}
 				else if (topRow && rightCol)
 				{ 
 					
-					zones[i]->portals.at((int)ZoneFace::South).set(zones[i + zoneW]);
-					
-					zones[i]->portals.at((int)ZoneFace::West).set(zones[i - 1]);
+					zones[i]->getPortals()[(int)ZoneFace::South].set(zones[(i % 3) + 3 * (i / 3) + 3]);
+
+					zones[i]->getPortals()[(int)ZoneFace::West].set(zones[(i % 3) + 3 * (i / 3) - 1]);
+
 				}
 				else if (bottomRow && rightCol)
 				{ 
-					zones[i]->portals.at((int)ZoneFace::North).set(zones[i - zoneW]);
-					zones[i]->portals.at((int)ZoneFace::West).set(zones[i - 1]);
+					zones[i]->getPortals()[(int)ZoneFace::North].set(zones[(i % 3) + 3 * (i / 3) - 3]);
+
+					zones[i]->getPortals()[(int)ZoneFace::West].set(zones[(i % 3) + 3 * (i / 3) - 1]);
+
 				}
 				else if (leftCol)
 				{
-					zones[i]->portals.at((int)ZoneFace::North).set(zones[i - zoneW]);
-					zones[i]->portals.at((int)ZoneFace::South).set(zones[i + zoneW]);
-					zones[i]->portals.at((int)ZoneFace::East).set(zones[i + 1]);
+					zones[i]->getPortals()[(int)ZoneFace::North].set(zones[(i % 3) + 3 * (i / 3) - 3]);
+					zones[i]->getPortals()[(int)ZoneFace::South].set(zones[(i % 3) + 3 * (i / 3) + 3]);
+					zones[i]->getPortals()[(int)ZoneFace::East].set(zones[(i % 3) + 3 * (i / 3) + 1]);
+					
 
 				}
 				else if (bottomRow)
 				{
-					zones[i]->portals.at((int)ZoneFace::North).set(zones[i - zoneW]);
-					
-					zones[i]->portals.at((int)ZoneFace::East).set(zones[i + 1]);
-					zones[i]->portals.at((int)ZoneFace::West).set(zones[i - 1]);
+					zones[i]->getPortals()[(int)ZoneFace::North].set(zones[(i % 3) + 3 * (i / 3) - 3]);
+
+					zones[i]->getPortals()[(int)ZoneFace::East].set(zones[(i % 3) + 3 * (i / 3) + 1]);
+					zones[i]->getPortals()[(int)ZoneFace::West].set(zones[(i % 3) + 3 * (i / 3) - 1]);
+
 				}
 				else if (topRow)
 				{
+					zones[i]->getPortals()[(int)ZoneFace::South].set(zones[(i % 3) + 3 * (i / 3) + 3]);
+					zones[i]->getPortals()[(int)ZoneFace::East].set(zones[(i % 3) + 3 * (i / 3) + 1]);
+					zones[i]->getPortals()[(int)ZoneFace::West].set(zones[(i % 3) + 3 * (i / 3) - 1]);
 
-					zones[i]->portals.at((int)ZoneFace::South).set(zones[i + zoneW]);
-					zones[i]->portals.at((int)ZoneFace::East).set(zones[i + 1]);
-					zones[i]->portals.at((int)ZoneFace::West).set(zones[i - 1]);
 				}
 				else if (rightCol)
 				{
-					zones[i]->portals.at((int)ZoneFace::North).set(zones[i - zoneW]);
-					zones[i]->portals.at((int)ZoneFace::South).set(zones[i + zoneW]);
-					zones[i]->portals.at((int)ZoneFace::West).set(zones[i - 1]);
+					zones[i]->getPortals()[(int)ZoneFace::North].set(zones[(i % 3) + 3 * (i / 3) - 3]);
+					zones[i]->getPortals()[(int)ZoneFace::South].set(zones[(i % 3) + 3 * (i / 3) + 3]);
+					zones[i]->getPortals()[(int)ZoneFace::West].set(zones[(i % 3) + 3 * (i / 3) - 1]);
 				}
 			}
-		}
+		
 	}
 }
 

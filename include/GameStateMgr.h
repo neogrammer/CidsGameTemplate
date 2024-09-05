@@ -6,6 +6,7 @@
 #include <GameState.h>
 #include <game_state_types.h>
 #include <deque>
+#include <string>
 class GameState;
 
 
@@ -27,7 +28,7 @@ namespace cid
 
 		GameStateMgr(GameStateMgr&&) = delete;
 		GameStateMgr& operator=(GameStateMgr&&) = delete;
-
+		void setupState(GameStateType type_, const std::string& stageName_);
 
 		void setup();
 		void render();

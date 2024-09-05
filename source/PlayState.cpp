@@ -9,15 +9,18 @@ PlayState::PlayState()
 
 void PlayState::input()
 {
-	gAcc.stageMgr->input();
+	currStage.lock()->input();
+	//gAcc.stageMgr->input();
 }
 
 void PlayState::update()
 {
-	gAcc.stageMgr->update();
+	currStage.lock()->update();
+	//gAcc.stageMgr->update();
 }
 
 void PlayState::render()
 {
-	gAcc.stageMgr->render();
+	currStage.lock()->render();
+	//gAcc.stageMgr->render();
 }

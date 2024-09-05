@@ -24,7 +24,7 @@ class Zone
 
 public:
 
-	std::array <Portal, 4 > portals = { Portal{}, };
+	std::array <Portal, 4 > portals = { Portal{}, Portal{}, Portal{}, Portal{} };
 	int zoneID{ -1 };
 
 	sf::Sprite bgSpr{};
@@ -41,5 +41,6 @@ public:
 	void input();
 	void update();
 	void render();
+	std::array<Portal, 4>& getPortals();
 	std::vector<std::weak_ptr<Tile> >& getTiles();
 };

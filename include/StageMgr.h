@@ -16,6 +16,8 @@ namespace cid
 		void input();
 		void update();
 		void render();
+		std::shared_ptr<Stage> getStage(const std::string& stageName_);
+
 	};
 
 }

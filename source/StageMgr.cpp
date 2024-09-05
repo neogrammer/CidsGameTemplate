@@ -26,3 +26,8 @@ void cid::StageMgr::render()
 {
 	currStage->render();
 }
+
+std::shared_ptr<Stage> StageMgr::getStage(const std::string& stageName_)
+{
+	return stages.at(stageName_);
+}

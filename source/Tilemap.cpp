@@ -50,14 +50,17 @@ void Tilemap::setupTiles(const std::string& filename_, const std::string& tsetDa
 			for (int x = 0; x < totalCols; x++)
 			{
 				int num = y * totalCols + x;
-				if (num >= tiles.size()) break;
+				if (num >= tiles.capacity()) break;
 
 				int tileSheetIdx;
 				file >> tileSheetIdx;
 				tiles.emplace_back(std::make_shared<Tile>(tileset.copyTile(tileSheetIdx).aabb));
+				tiles.back()->aabb.pos = {(float)( x * tileset.getTileW()), float(y * tileset.getTileH()) };
 			}
 		}
 		// read in file and use that number to copy a new tile from the tileset
+		int i = 0;
+		file.close();
 	}
 }
 

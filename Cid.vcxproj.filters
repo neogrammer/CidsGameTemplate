@@ -537,7 +537,7 @@
     <None Include="assets\data\tilemaps\tilemap_introStage.dat">
       <Filter>assets\data\tilemaps</Filter>
     </None>
-    <None Include="assets\data\tilesets\tileset1.dat">
+    <None Include="assets\data\tilesets\tileset1.data">
       <Filter>assets\data\tilesets</Filter>
     </None>
     <None Include="assets\data\zones\introStageZoneData.dat">

@@ -50,7 +50,7 @@ void Tileset::setup(const std::string& tsetData_)
 	cols = pitch;
 	tiles.clear();
 	tiles.reserve(rows * cols);
-	for (int y = 0; y < numTiles / pitch; y++)
+	for (int y = 0; y < rows; y++)
 	{
 		for (int x = 0; x < pitch; x++)
 		{
@@ -71,4 +71,18 @@ void Tileset::setup(const std::string& tsetData_)
 		}
 	}
 	int i = 0;
+	texType = Cfg::Textures::TSet1;
+
+	file.close();
+}
+
+int Tileset::getTileW()
+{
+	return tiles.at(0)->aabb.texRectDims.x;
+}
+
+int Tileset::getTileH()
+{
+	return tiles.at(0)->aabb.texRectDims.y;
+
 }
