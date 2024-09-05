@@ -8,9 +8,18 @@
 #include <utility>
 #include <globals.h>
 #include <SFML/Window/Event.hpp>
+#include <globals.h>
 
 Game::Game()
 {
+	gAcc.gameStateMgr->setup();
+	gAcc.animMgr->setup();
+	gAcc.entityMgr->setup();
+	gAcc.fizzicksMgr->setup();
+	gAcc.inputMgr->setup();
+	gAcc.scriptMgr->setup();
+	gAcc.stageMgr->setup("","");
+
 	/*MenuObject::setupPatches();
 
 	wndw::CreateWindow("MegamanOne", 1600U, 900U);
@@ -21,12 +30,12 @@ Game::Game()
 
 void Game::render()
 {
-	//gStateMgr->render();
+	gAcc.gameStateMgr->render();
 }
 
 void Game::input()
 {
-	//gStateMgr->input();
+	gAcc.gameStateMgr->input();
 }
 
 Game::~Game()
@@ -76,11 +85,11 @@ void* Game::run()
 
 void Game::update()
 {
-	//gStateMgr->update();
+	gAcc.gameStateMgr->update();
 }
 
 void Game::updateLate()
 {
-	//gStateMgr->updateLate();
+	//StateMgr->updateLate();
 }
 

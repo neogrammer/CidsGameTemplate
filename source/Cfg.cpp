@@ -9,6 +9,11 @@ ResourceManager<sf::SoundBuffer, int> Cfg::sounds = {};
 
 ActionMap<int> Cfg::playerInputs = {};
 
+std::unordered_map<std::string, Cfg::Textures> Cfg::stringToTex = {
+	{"tset1", Textures::TSet1},
+	{"titleBG",Textures::TitleBG},
+	{"splashBG",Textures::SplashBG}
+};
 
 void Cfg::Initialize()
 {
@@ -37,6 +42,9 @@ void Cfg::initSounds()
 
 void Cfg::initTextures()
 {
+	textures.load((int)Cfg::Textures::SplashBG, "assets/textures/bgs/splashBG.jpg");
+	textures.load((int)Cfg::Textures::TitleBG, "assets/textures/bgs/title.jpg");
+	textures.load((int)Cfg::Textures::TSet1, "assets/textures/tilesets/tileset1_50x50.png");
 
 }
 

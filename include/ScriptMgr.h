@@ -3,5 +3,7 @@ namespace cid
 {
 	class ScriptMgr
 	{
+	public:
+		void setup();
 	};
 }

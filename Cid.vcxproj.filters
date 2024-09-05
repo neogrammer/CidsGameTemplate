@@ -115,12 +115,6 @@
     <Filter Include="source\zones">
       <UniqueIdentifier>{8a7b26d3-16f3-435e-a030-7e0238ecaa6c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\zones\intro">
-      <UniqueIdentifier>{28abdddf-9c93-457b-a983-50ad8148ab89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="headers\zones\intro">
-      <UniqueIdentifier>{1d420858-a06f-4ffa-8df7-7743eb2ce17c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="source\stages\main_stages">
       <UniqueIdentifier>{056aefba-d43d-4843-878d-16e6d3814e20}</UniqueIdentifier>
     </Filter>
@@ -177,6 +171,24 @@
     </Filter>
     <Filter Include="assets\fonts">
       <UniqueIdentifier>{6ceba973-eb8d-4335-ac36-0e99c49c6694}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\textures\bgs">
+      <UniqueIdentifier>{6729c8d5-c4a2-48a4-b498-340e83babdd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\data\tilesets">
+      <UniqueIdentifier>{34c9c185-c1db-4f42-874f-be0cbf7a53cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\data\tilemaps">
+      <UniqueIdentifier>{3ba95075-06d8-4b24-8eab-0a9870b1d7c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\textures\tilesets">
+      <UniqueIdentifier>{5c47f65d-fc47-4fab-8df2-e7b426bee649}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\zones\portals">
+      <UniqueIdentifier>{58a26e57-bfdb-4016-bab9-9ec6c22aeb40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\portals">
+      <UniqueIdentifier>{a48ea00b-ba5e-42c6-aede-77ae2be093c9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -342,8 +354,14 @@
     <ClInclude Include="include\ResourceManager.h">
       <Filter>headers\resources</Filter>
     </ClInclude>
-    <ClInclude Include="include\IntroZone.h">
-      <Filter>headers\zones\intro</Filter>
+    <ClInclude Include="include\game_state_types.h">
+      <Filter>headers\global</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AABB.h">
+      <Filter>headers\global</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Portal.h">
+      <Filter>headers\zones\portals</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -495,8 +513,12 @@
     <ClCompile Include="source\Err.cpp">
       <Filter>source\global</Filter>
     </ClCompile>
-    <ClCompile Include="source\IntroZone.cpp">
-      <Filter>source\zones\intro</Filter>
+    <ClCompile Include="include\FizziksMgr.cpp" />
+    <ClCompile Include="source\AABB.cpp">
+      <Filter>source\global</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Portal.cpp">
+      <Filter>source\portals</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -509,5 +531,22 @@
     <None Include="include\tpl\ActionTarget.tpl">
       <Filter>headers\io\tpl</Filter>
     </None>
+    <None Include="assets\data\tilemaps\tilemap_introStage.dat">
+      <Filter>assets\data\tilemaps</Filter>
+    </None>
+    <None Include="assets\data\tilesets\tileset1.dat">
+      <Filter>assets\data\tilesets</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\bgs\splashBG.jpg">
+      <Filter>assets\textures\bgs</Filter>
+    </Image>
+    <Image Include="assets\textures\bgs\title.jpg">
+      <Filter>assets\textures\bgs</Filter>
+    </Image>
+    <Image Include="assets\textures\tilesets\tileset1_50x50.png">
+      <Filter>assets\textures\tilesets</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AABB.h" />
     <ClInclude Include="include\Accessor.h" />
     <ClInclude Include="include\Action.h" />
     <ClInclude Include="include\ActionMap.h" />
@@ -45,10 +46,10 @@
     <ClInclude Include="include\GameState.h" />
     <ClInclude Include="include\GameStateMgr.h" />
     <ClInclude Include="include\GameStateTransition.h" />
+    <ClInclude Include="include\game_state_types.h" />
     <ClInclude Include="include\globals.h" />
     <ClInclude Include="include\InputMgr.h" />
     <ClInclude Include="include\IntroStage.h" />
-    <ClInclude Include="include\IntroZone.h" />
     <ClInclude Include="include\NPC.h" />
     <ClInclude Include="include\object_types.h" />
     <ClInclude Include="include\offending_param_bundles.h" />
@@ -56,6 +57,7 @@
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\PlayerDeathState.h" />
     <ClInclude Include="include\PlayState.h" />
+    <ClInclude Include="include\Portal.h" />
     <ClInclude Include="include\Powerup.h" />
     <ClInclude Include="include\PresentStageState.h" />
     <ClInclude Include="include\Projectile.h" />
@@ -76,7 +78,9 @@
     <ClInclude Include="include\ZoneTransition.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\FizziksMgr.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\AABB.cpp" />
     <ClCompile Include="source\Accessor.cpp" />
     <ClCompile Include="source\Action.cpp" />
     <ClCompile Include="source\Animation.cpp" />
@@ -104,12 +108,12 @@
     <ClCompile Include="source\globals.cpp" />
     <ClCompile Include="source\InputMgr.cpp" />
     <ClCompile Include="source\IntroStage.cpp" />
-    <ClCompile Include="source\IntroZone.cpp" />
     <ClCompile Include="source\NPC.cpp" />
     <ClCompile Include="source\Platform.cpp" />
     <ClCompile Include="source\Player.cpp" />
     <ClCompile Include="source\PlayerDeathState.cpp" />
     <ClCompile Include="source\PlayState.cpp" />
+    <ClCompile Include="source\Portal.cpp" />
     <ClCompile Include="source\Powerup.cpp" />
     <ClCompile Include="source\PresentStageState.cpp" />
     <ClCompile Include="source\Projectile.cpp" />
@@ -129,9 +133,16 @@
     <ClCompile Include="source\ZoneTransition.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\data\tilemaps\tilemap_introStage.dat" />
+    <None Include="assets\data\tilesets\tileset1.dat" />
     <None Include="include\tpl\ActionMap.tpl" />
     <None Include="include\tpl\ActionTarget.tpl" />
     <None Include="include\tpl\ResourceManager.tpl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\bgs\splashBG.jpg" />
+    <Image Include="assets\textures\bgs\title.jpg" />
+    <Image Include="assets\textures\tilesets\tileset1_50x50.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

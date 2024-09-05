@@ -19,7 +19,8 @@ struct Cfg
 	static void Initialize();
 
 	// Resource Enums 
-	enum class Textures : int { Count, NotSet };
+	enum class Textures : int { TitleBG, SplashBG, TSet1, Count, NotSet };
+	static std::unordered_map<std::string, Textures> stringToTex;
 	enum class Fonts : int { Count, NotSet };
 	enum class Music : int { Count, NotSet };
 	enum class Sounds : int { Count, NotSet };

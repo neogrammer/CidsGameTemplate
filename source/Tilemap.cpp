@@ -1,0 +1,79 @@
+#include "Tilemap.h"
+#include <fstream>
+#include <globals.h>
+Tilemap::Tilemap()
+	: tiles{}
+	, zoneTileRanges{ {{},{}} }
+	, tileset{}
+{
+}
+
+Tilemap::~Tilemap()
+{
+}
+
+//std::pair<sf::Vector2i, sf::Vector2i>& Tilemap::getZoneRange(int zoneNum_)
+//{
+//	return zoneTileRanges[zoneNum_];
+//}
+
+Cfg::Textures Tilemap::texType()
+{
+	return tileset.getTexType();
+}
+
+std::vector<std::shared_ptr<Tile>>& Tilemap::getTiles()
+{
+	return tiles;
+}
+
+void Tilemap::setupTiles(const std::string& filename_)
+{
+	std::ifstream file;
+	file.open(filename_);
+
+	if (!file.is_open() || !file.good())
+	{
+		return;
+	}
+	else
+	{
+		tiles.clear();
+
+		int colsPerScreen, rowsPerScreen, totalRows, totalCols;
+		file >> colsPerScreen >> rowsPerScreen >> totalRows >> totalCols;
+		tiles.reserve(totalCols * totalRows);
+		for (int y = 0; y < totalRows; y++)
+		{
+			for (int x = 0; x < totalCols; x++)
+			{
+				int num = y * totalCols + x;
+				if (num >= tiles.size()) break;
+
+				int tileSheetIdx;
+				file >> tileSheetIdx;
+				tiles.emplace_back(std::make_shared<Tile>(tileset.copyTile(tileSheetIdx).aabb));
+			}
+		}
+		// read in file and use that number to copy a new tile from the tileset
+	}
+}
+
+
+std::pair<sf::Vector2i, sf::Vector2i>& Tilemap::getZoneRange(int zoneNum_)
+{
+	if (zoneTileRanges.find(zoneNum_) == zoneTileRanges.end())
+	{
+		return zoneTileRanges[zoneNum_];
+			
+	}
+	else
+	{
+		return zoneTileRanges[zoneNum_];
+		sf::Vector2i tl = zoneTileRanges[zoneNum_].first;
+		sf::Vector2i br = zoneTileRanges[zoneNum_].second;
+		int tilesX = br.x - tl.x;
+		int tilesY = br.y - tl.y;
+		//return { {tl.x,tl.y}, {tilesX, tilesY} };
+	}
+}
