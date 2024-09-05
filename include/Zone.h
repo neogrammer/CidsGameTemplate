@@ -28,6 +28,7 @@ public:
 	int zoneID{ -1 };
 
 	sf::Sprite bgSpr{};
+	sf::Sprite bgSpr2{};
 	sf::Vector2i topLeftTile{};
 	sf::Vector2i bottomRightTile{};
 	std::vector<std::weak_ptr<Tile> > tiles{};
