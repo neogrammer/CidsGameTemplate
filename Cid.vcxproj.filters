@@ -389,9 +389,6 @@
     <ClCompile Include="source\GameStateMgr.cpp">
       <Filter>source\managers</Filter>
     </ClCompile>
-    <ClCompile Include="source\StageMgr.cpp">
-      <Filter>source\managers</Filter>
-    </ClCompile>
     <ClCompile Include="source\BeatStageState.cpp">
       <Filter>source\game_states\helper_states</Filter>
     </ClCompile>
@@ -516,6 +513,9 @@
     </ClCompile>
     <ClCompile Include="source\Portal.cpp">
       <Filter>source\portals</Filter>
+    </ClCompile>
+    <ClCompile Include="source\StageMgr.cpp">
+      <Filter>source\managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

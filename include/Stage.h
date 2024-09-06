@@ -14,6 +14,8 @@ protected:
 	std::vector<std::shared_ptr<Zone> > zones{};
 	int currZoneIdx{ 0 };
 
+	// put player here
+
 public:
 	Stage() = delete;
 

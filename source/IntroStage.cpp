@@ -2,6 +2,7 @@
 #include <string>
 #include <globals.h>
 
+#include <iostream>
 IntroStage::IntroStage(const std::string& tmapData_, const std::string& zoneData_, const std::string& tsetData_)
 	: Stage{ tmapData_, zoneData_, tsetData_ }
 {
@@ -16,6 +17,7 @@ IntroStage::IntroStage(const std::string& tmapData_, const std::string& zoneData
 		getZone(i)->bgSpr2 = {};
 		getZone(i)->bgSpr2.setTexture(Cfg::textures.get((int)Cfg::Textures::SpaceBG));
 		getZone(i)->bgSpr2.setPosition({ getZone()->bgSpr.getPosition().x - getZone()->bgSpr.getTextureRect().width, getZone()->bgSpr.getPosition().y });
+
 	}
 }
 
@@ -94,6 +96,8 @@ void IntroStage::input()
 
 void IntroStage::setup()
 {
+
+	
 }
 
 void IntroStage::update()
@@ -124,21 +128,25 @@ void IntroStage::render()
 	getZone()->render();
 
 
-	for (auto& tile : getZone()->getTiles())
+	/*for (auto& tmp : tmap->getTiles())
 	{
-		auto tmp = tile.lock();
-		auto pos = tmp->aabb.pos;
-		pos.y -= tmp->aabb.texOffset.y;
 
-		sf::Sprite tmpSpr = {};
-		tmpSpr.setPosition({ tile.lock()->aabb.pos.x - tile.lock()->aabb.texOffset.x, tile.lock()->aabb.pos.y - tile.lock()->aabb.texOffset.y });
+			if (tmp->aabb.pos > )
 
-		tmpSpr.setTexture(Cfg::textures.get((int)getTSetTex()));
-		tmpSpr.setTextureRect({ { tile.lock()->aabb.texPos }, {tile.lock()->aabb.texRectDims}});
-		gWnd.draw(tmpSpr);
-	}
+			sf::Sprite tmpSpr = {};
+
+			tmpSpr.setTexture(Cfg::textures.get((int)Cfg::Textures::TSet1));
+			tmpSpr.setTextureRect({ {tmp->aabb.texPos},{tmp->aabb.texRectDims} });
+			tmpSpr.setPosition(sf::Vector2f(gWnd.mapCoordsToPixel(tmp->aabb.pos)));
+			gWnd.draw(tmpSpr);
 
 		
+			if (getZone()->zoneID == 1)
+			{
+				std::cout << gWnd.getView().getCenter().x << std::endl;
+			}
+	}
+		*/
 
 
 }

@@ -31,7 +31,9 @@ public:
 	sf::Sprite bgSpr2{};
 	sf::Vector2i topLeftTile{};
 	sf::Vector2i bottomRightTile{};
-	std::vector<std::weak_ptr<Tile> > tiles{};
+	std::vector<std::shared_ptr<Tile> > tiles{};
+
+	// keep containers like enemies and powerups here, set by the current stage just like the tiles
 
 public:
 	Zone() = default;
@@ -43,6 +45,6 @@ public:
 	void update();
 	void render();
 	std::array<Portal, 4>& getPortals();
-	std::vector<std::weak_ptr<Tile> >& getTiles();
+	std::vector<std::shared_ptr<Tile> >& getTiles();
 
 };

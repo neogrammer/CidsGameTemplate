@@ -132,6 +132,8 @@ Stage::Stage(const std::string& tmapData_, const std::string& zoneData_, const s
 			}
 		
 	}
+
+	// set enemy / powerups etc. containers here
 }
 
 Stage::~Stage()

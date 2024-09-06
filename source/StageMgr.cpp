@@ -1,5 +1,6 @@
 #include <StageMgr.h>
 #include <IntroStage.h>
+#include <globals.h>
 using namespace cid;
 
 void cid::StageMgr::setup(const std::string& stageName_, const std::string& tmapData_, const std::string& zoneData_, const std::string& tsetData_)

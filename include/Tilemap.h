@@ -10,14 +10,15 @@
 #include <string>
 class Tilemap
 {
-	int cols{ };
-	int rows{ };
+
 
 	std::vector<std::shared_ptr<Tile> > tiles;
 	std::unordered_map<int, std::pair<sf::Vector2i, sf::Vector2i> > zoneTileRanges; // tiles
 	Tileset tileset{};
 	
-public:
+public:	
+	int cols{ };
+	 int rows{ };
 	Tilemap();
 	~Tilemap();
 	Tilemap(const Tilemap&) = delete;

@@ -56,6 +56,7 @@ void Tilemap::setupTiles(const std::string& filename_, const std::string& tsetDa
 				file >> tileSheetIdx;
 				tiles.emplace_back(std::make_shared<Tile>(tileset.copyTile(tileSheetIdx).aabb));
 				tiles.back()->aabb.pos = {(float)( x * tileset.getTileW()), float(y * tileset.getTileH()) };
+
 			}
 		}
 		// read in file and use that number to copy a new tile from the tileset
